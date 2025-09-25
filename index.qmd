@@ -1,0 +1,14 @@
+---
+title: "aiml.engineer"
+---
+
+# Welcome
+
+This is my public knowledge base on AI/ML — notes, labs, projects, and blog posts.
+
+## Sections
+- [Posts](posts/)
+- [Notes](notes/)
+- [Labs](labs/)
+- [Projects](projects/)
+- [Reading](reading/)

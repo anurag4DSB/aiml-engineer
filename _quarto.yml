@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "aiml.engineer"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: posts/index.qmd
+        text: Posts
+      - href: notes/index.qmd
+        text: Notes
+      - href: labs/index.qmd
+        text: Labs
+      - href: projects/index.qmd
+        text: Projects
+      - href: reading/index.qmd
+        text: Reading
+  search: true
+  open-graph: true
+  twitter-card: true
