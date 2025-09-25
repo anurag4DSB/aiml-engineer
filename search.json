@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "notes/hello-note.html",
+    "href": "notes/hello-note.html",
+    "title": "Sample Note",
+    "section": "",
+    "text": "A simple note to test the listings."
+  },
+  {
+    "objectID": "NOTICE.html",
+    "href": "NOTICE.html",
+    "title": "Notice",
+    "section": "",
+    "text": "Notice\nThis repository contains both original content and material adapted or quoted from external sources.\n\nAll original content (notes, posts, labs, projects) is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0).\nExternal material remains under its original license, and attribution is provided where applicable.\nQuotes, excerpts, and references are included for educational and commentary purposes with proper credit.\n\nIf you believe material has been misattributed or misused, please open an issue or contact me."
+  },
+  {
+    "objectID": "reading/index.html",
+    "href": "reading/index.html",
+    "title": "Reading",
+    "section": "",
+    "text": "Paper summaries, critiques, and reading notes.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSample Paper Summary\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Posts",
+    "section": "",
+    "text": "Long-form essays and reflections.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHello World\n\n\n\n\n\n\n\n\nSep 26, 2025\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/lab-hello.html",
+    "href": "labs/lab-hello.html",
+    "title": "Lab: Hello Quarto",
+    "section": "",
+    "text": "A placeholder lab entry. Replace with a Jupyter notebook or .qmd that contains code and results."
+  },
+  {
+    "objectID": "projects/hello-project.html",
+    "href": "projects/hello-project.html",
+    "title": "Sample Project",
+    "section": "",
+    "text": "A placeholder project page."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Case studies, implementations, and builds.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSample Project\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "labs/index.html",
+    "href": "labs/index.html",
+    "title": "Labs",
+    "section": "",
+    "text": "Hands-on experiments and Jupyter notebooks.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLab: Hello Quarto\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "aiml.engineer",
+    "section": "",
+    "text": "This is my public knowledge base on AI/ML — notes, labs, projects, and blog posts.\n\n\n\nPosts\nNotes\nLabs\nProjects\nReading"
+  },
+  {
+    "objectID": "index.html#sections",
+    "href": "index.html#sections",
+    "title": "aiml.engineer",
+    "section": "",
+    "text": "Posts\nNotes\nLabs\nProjects\nReading"
+  },
+  {
+    "objectID": "posts/2025-09-26-hello-world.html",
+    "href": "posts/2025-09-26-hello-world.html",
+    "title": "Hello World",
+    "section": "",
+    "text": "This is my first post on aiml.engineer. More to come!"
+  },
+  {
+    "objectID": "reading/hello-reading.html",
+    "href": "reading/hello-reading.html",
+    "title": "Sample Paper Summary",
+    "section": "",
+    "text": "A placeholder reading entry."
+  },
+  {
+    "objectID": "notes/index.html",
+    "href": "notes/index.html",
+    "title": "Notes",
+    "section": "",
+    "text": "Concise explanations, definitions, and concepts.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSample Note\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]

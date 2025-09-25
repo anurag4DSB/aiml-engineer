@@ -1,0 +1,32 @@
+[
+  {
+    "listing": "/reading/index.html",
+    "items": [
+      "/reading/hello-reading.html"
+    ]
+  },
+  {
+    "listing": "/posts/index.html",
+    "items": [
+      "/posts/2025-09-26-hello-world.html"
+    ]
+  },
+  {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/hello-project.html"
+    ]
+  },
+  {
+    "listing": "/labs/index.html",
+    "items": [
+      "/labs/lab-hello.html"
+    ]
+  },
+  {
+    "listing": "/notes/index.html",
+    "items": [
+      "/notes/hello-note.html"
+    ]
+  }
+]
