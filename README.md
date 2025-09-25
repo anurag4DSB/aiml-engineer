@@ -1,6 +1,6 @@
 # aiml-engineer
 
-**Public knowledge base on AI/ML — notes, labs, projects, and blog posts.**
+**Public knowledge base on AI/ML - notes, labs, projects, and blog posts.**
 
 This repository powers [aiml.engineer](https://aiml.engineer), where I document my ongoing journey in artificial intelligence and machine learning.
 
