@@ -206,9 +206,6 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Quarto
-_site/
-.quarto/
-
-/.quarto/
-**/*.quarto_ipynb
+# lccal developmentfeat: r
+.DS_Store
+.venv/
