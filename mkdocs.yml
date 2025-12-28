@@ -1,0 +1,12 @@
+site_name: aiml.engineer
+
+nav:
+  - Home: index.md
+  - Posts: posts/index.md
+  - Notes: notes/index.md
+  - Labs: labs/index.md
+  - Projects: projects/index.md
+  - Reading: reading/index.md
+
+theme:
+  name: mkdocs
