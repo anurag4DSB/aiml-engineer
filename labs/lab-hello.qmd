@@ -1,5 +1,0 @@
----
-title: "Lab: Hello Quarto"
----
-
-A placeholder lab entry. Replace with a Jupyter notebook or `.qmd` that contains code and results.
