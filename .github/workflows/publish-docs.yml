@@ -1,18 +1,39 @@
 name: Publish MkDocs site
+
 on:
   push:
     branches: [ main ]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          python-version: '3.13'
-      - run: pip install mkdocs
-      - run: mkdocs build
-      - uses: peaceiris/actions-gh-pages@v4
+          fetch-depth: 0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "0.5.15"
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Build MkDocs site
+        run: uv run mkdocs build --strict
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
           publish_dir: site
           cname: aiml.engineer
