@@ -1,0 +1,24 @@
+# yamllint configuration for YAML files
+# See: https://yamllint.readthedocs.io/
+
+extends: default
+
+rules:
+  # Line length set to 120 for readability while maintaining reasonable limits
+  # Default is 80, but modern displays and CI tools can handle longer lines
+  line-length:
+    max: 120
+
+  # Comments should have at least 1 space from content for readability
+  comments:
+    min-spaces-from-content: 1
+
+  # Document start (---) is optional in this project
+  # Disabled to reduce boilerplate in simple YAML files
+  document-start: disable
+
+# Ignore generated and virtual directories that shouldn't be linted
+ignore: |
+  .venv/
+  site/
+  uv.lock

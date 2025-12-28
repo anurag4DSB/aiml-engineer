@@ -74,7 +74,7 @@ uv run mkdocs --version
 
 You should see output like:
 
-```
+```text
 mkdocs, version 1.6.1 from /path/to/.venv/lib/python3.13/site-packages/mkdocs (Python 3.13)
 ```
 
@@ -100,9 +100,62 @@ Open your browser and navigate to `http://127.0.0.1:8000` to see the site locall
 - Press `Ctrl+C` to stop the server
 - Use `uv run mkdocs serve --strict` to catch warnings during development
 
+## Code Quality and Linting
+
+This project uses automated linting to maintain code quality. All markdown and YAML files are checked before commits and in CI.
+
+### Install Pre-commit Hooks
+
+After cloning the repository, install the pre-commit hooks:
+
+```bash
+uv sync --group dev
+uv run pre-commit install
+```
+
+This will automatically run linting checks before each commit.
+
+### Manual Linting
+
+To manually run linting checks:
+
+```bash
+# Lint all markdown files
+uv run pymarkdown scan -r docs/ README.md CONTRIBUTING.md NOTICE.md
+
+# Lint all YAML files
+uv run yamllint .
+
+# Run all pre-commit hooks manually
+uv run pre-commit run --all-files
+```
+
+### Linting Rules
+
+**Markdown** (configured in `.pymarkdown`):
+
+- All code blocks must have language specified
+- No trailing whitespace
+- Consistent heading styles
+- Line length not enforced (flexible for documentation)
+
+**YAML** (configured in `.yamllint.yml`):
+
+- Max line length: 120 characters
+- Consistent indentation (2 spaces)
+- Valid YAML syntax
+
+### Bypassing Hooks (Emergency Only)
+
+If you need to commit without running hooks (not recommended):
+
+```bash
+git commit --no-verify -m "Your message"
+```
+
 ## Project Structure
 
-```
+```text
 aiml-engineer/
 ├── docs/                    # All documentation content
 │   ├── index.md            # Homepage

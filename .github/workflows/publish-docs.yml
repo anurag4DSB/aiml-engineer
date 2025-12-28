@@ -2,7 +2,7 @@ name: Publish MkDocs site
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 permissions:
   contents: write
@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy:
+  lint-build-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,7 +25,13 @@ jobs:
         run: uv python install 3.13
 
       - name: Install dependencies
-        run: uv sync --frozen
+        run: uv sync --frozen --group dev
+
+      - name: Lint markdown files
+        run: uv run pymarkdown scan -r docs/ README.md CONTRIBUTING.md NOTICE.md
+
+      - name: Lint YAML files
+        run: uv run yamllint .
 
       - name: Build MkDocs site
         run: uv run mkdocs build --strict
