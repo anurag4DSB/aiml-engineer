@@ -121,7 +121,7 @@ To manually run linting checks:
 
 ```bash
 # Lint all markdown files
-uv run pymarkdown scan -r docs/ README.md CONTRIBUTING.md NOTICE.md
+uv run pymarkdown scan -r content/ README.md CONTRIBUTING.md NOTICE.md
 
 # Lint all YAML files
 uv run yamllint .
@@ -157,7 +157,7 @@ git commit --no-verify -m "Your message"
 
 ```text
 aiml-engineer/
-├── docs/                    # All documentation content
+├── content/                 # All site content (renamed from docs)
 │   ├── index.md            # Homepage
 │   ├── posts/              # Blog posts
 │   ├── notes/              # Technical notes
@@ -192,7 +192,7 @@ Each section (posts, notes, labs, etc.) follows this structure:
 
    ```bash
    # Example: Adding a new note
-   touch docs/notes/my-new-note.md
+   touch content/notes/my-new-note.md
    ```
 
 2. **Add frontmatter and content:**

@@ -6,6 +6,9 @@ site_author: Anurag Mittal
 repo_url: https://github.com/anurag4dsb/aiml-engineer
 repo_name: anurag4dsb/aiml-engineer
 
+# Content directory (renamed from docs to reserve docs for repository documentation)
+docs_dir: content
+
 theme:
   name: material
   palette:

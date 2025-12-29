@@ -28,7 +28,7 @@ jobs:
         run: uv sync --frozen --group dev
 
       - name: Lint markdown files
-        run: uv run pymarkdown scan -r docs/ README.md CONTRIBUTING.md NOTICE.md
+        run: uv run pymarkdown scan -r content/ README.md CONTRIBUTING.md NOTICE.md
 
       - name: Lint YAML files
         run: uv run yamllint .
