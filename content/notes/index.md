@@ -1,6 +1,7 @@
 ---
 title: "Notes"
-listing: true
 ---
 
 Concise explanations, definitions, and concepts.
+
+- [VLIW SIMD Architecture](vliw-simd/index.md) - Understanding VLIW architectures and SIMD optimization

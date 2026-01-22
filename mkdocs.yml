@@ -90,7 +90,15 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Posts: posts/index.md
-  - Notes: notes/index.md
+  - Notes:
+      - notes/index.md
+      - VLIW SIMD:
+          - notes/vliw-simd/index.md
+          - Scalar vs Vector: notes/vliw-simd/scalar-vs-vector.md
+          - ALU and Engines: notes/vliw-simd/alu-and-engines.md
+          - VLIW Architecture: notes/vliw-simd/vliw-architecture.md
+          - Instruction Set: notes/vliw-simd/instruction-set.md
+          - Optimization Strategies: notes/vliw-simd/optimization-strategies.md
   - Labs: labs/index.md
   - Projects: projects/index.md
   - Reading: reading/index.md
