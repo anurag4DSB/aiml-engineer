@@ -47,3 +47,11 @@ MD033 = { enabled = false }
 # MD022: Headings should be surrounded by blank lines - Disabled for flexibility
 # Allows more natural documentation flow without strict spacing requirements
 MD022 = { enabled = false }
+
+# MD024: No duplicate headings - Disabled for documentation
+# Documentation often uses repeated section names like "Configuration" or "Features" in different contexts
+MD024 = { enabled = false }
+
+# MD032: Lists should be surrounded by blank lines - Disabled for flexibility
+# Allows lists to flow naturally within documentation sections
+MD032 = { enabled = false }
