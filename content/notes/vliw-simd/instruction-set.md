@@ -1,6 +1,6 @@
 # Instruction Set Reference
 
-Complete reference for all instructions available in this architecture.
+Common instruction patterns in VLIW SIMD architectures. Specific syntax varies by architecture, but the concepts are universal.
 
 ---
 
@@ -8,7 +8,7 @@ Complete reference for all instructions available in this architecture.
 
 Every instruction is a tuple: `(engine, (operation, ...operands))`
 
-Most operands are **scratch addresses** (not values). The scratch space is like a large register file with 1536 slots.
+Most operands are **scratch addresses** (not values). The scratch space is like a large register file.
 
 ---
 
@@ -173,7 +173,7 @@ Control flow operations.
    { "alu": [("swap", a, b, b), ("swap", b, a, a)] }  # Not actual syntax, just concept
    ```
 
-2. **Scratch addresses must be allocated** - Use `alloc_scratch()` in KernelBuilder
+2. **Scratch addresses must be allocated** - Track which addresses are in use
 
 3. **Vector operations use contiguous addresses** - `dest` means `dest` through `dest+7`
 

@@ -21,15 +21,23 @@ The vector version of ALU - does the same operations but on 8 values simultaneou
 
 ---
 
-## All Engines in This Architecture
+## Typical VLIW Execution Units
 
-| Name | Full Name | Slots/Cycle | Purpose |
-|------|-----------|-------------|---------|
-| `alu` | Arithmetic Logic Unit | 12 | Scalar math/logic |
-| `valu` | Vector ALU | 6 | Vector math/logic (8 elements each) |
-| `load` | Load Unit | 2 | Read from memory into scratch |
-| `store` | Store Unit | 2 | Write from scratch to memory |
-| `flow` | Control Flow | 1 | Branches, jumps, selects, halt |
+Modern VLIW processors commonly include these types of execution units:
+
+| Unit | Purpose | Typical Parallelism |
+|------|---------|---------------------|
+| ALU | Scalar arithmetic and logic | 2-16 operations/cycle |
+| VALU | Vector arithmetic and logic | 2-8 operations/cycle |
+| Load | Memory reads | 1-4 operations/cycle |
+| Store | Memory writes | 1-4 operations/cycle |
+| Flow | Control flow (branches, jumps) | 1 operation/cycle |
+
+The exact number of slots varies by processor. For example:
+
+- **TI C6x DSPs**: 8 functional units (2 multipliers, 6 ALU-like)
+- **Qualcomm Hexagon**: 4 execution slots per cycle
+- **Intel Itanium**: Up to 6 instructions per bundle
 
 ---
 
@@ -62,9 +70,7 @@ Different engines work **in parallel**. In one cycle you can:
 - Do 2 stores AND
 - Do 1 flow operation
 
-Maximum theoretical throughput per cycle: 23 operations.
-
-The baseline implementation uses ~1 operation per cycle. That's why there's so much room for optimization.
+The combined throughput across all engines represents the theoretical maximum operations per cycle. Achieving this requires finding enough independent operations to fill all slots.
 
 ---
 

@@ -87,33 +87,20 @@ All of these execute **simultaneously** in one cycle.
 
 ---
 
-## In This Challenge
+## Key Insight
 
-The current baseline puts **one operation per bundle**:
+The fundamental challenge in VLIW programming is: **How efficiently can you pack operations into instruction bundles?**
 
-```python
-# Baseline: 3 cycles for 3 operations
-Cycle 1: { "alu": [("+", 0, 1, 2)] }
-Cycle 2: { "alu": [("*", 3, 4, 5)] }
-Cycle 3: { "alu": [("-", 6, 7, 8)] }
-```
+- More operations per bundle = fewer cycles = better performance
+- The limiting factors are:
+  - Engine slot limits (how many operations of each type per cycle)
+  - Data dependencies (operations that depend on each other cannot run in parallel)
+  - Available independent work in the algorithm
 
-Optimized: **1 cycle for 3 operations** (if they're independent):
-
-```python
-# Optimized: 1 cycle for 3 operations
-Cycle 1: { "alu": [("+", 0, 1, 2), ("*", 3, 4, 5), ("-", 6, 7, 8)] }
-```
+VLIW architectures shift the burden of finding parallelism from hardware (at runtime) to the compiler/programmer (at compile time).
 
 ---
 
-## Key Insight
+## Applying VLIW Concepts
 
-The challenge is essentially: **How well can you pack operations into bundles?**
-
-- Maximum ops per cycle: 12 ALU + 6 VALU + 2 Load + 2 Store + 1 Flow = **23 operations**
-- Baseline uses: ~1 operation per cycle
-- Theoretical maximum speedup from packing alone: **23x**
-- Combined with vectorization (8x): theoretical **184x** speedup
-
-Reality is lower due to data dependencies, but the gap between 147K cycles and 1.3K cycles shows what's possible.
+For a hands-on example applying these concepts, see the [Anthropic Performance Take-Home](../../projects/anthropic-performance-takehome.md) project.

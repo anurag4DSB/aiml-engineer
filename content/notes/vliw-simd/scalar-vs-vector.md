@@ -30,14 +30,16 @@ b = a + 10                            # One instruction!
 
 ---
 
-## In This Architecture
+## Common SIMD Instruction Patterns
 
-| Type | Instruction | What it does |
-|------|-------------|--------------|
-| Scalar | `("alu", ("+", dest, a, b))` | `dest = a + b` (one value) |
-| Vector | `("valu", ("+", dest, a, b))` | `dest[0:8] = a[0:8] + b[0:8]` (8 values) |
-| Scalar Load | `("load", ("load", dest, addr))` | Load 1 word from memory |
-| Vector Load | `("load", ("vload", dest, addr))` | Load 8 consecutive words |
+| Type | Operation | What it does |
+|------|-----------|--------------|
+| Scalar | `add dest, a, b` | `dest = a + b` (one value) |
+| Vector | `vadd dest, a, b` | `dest[0:N] = a[0:N] + b[0:N]` (N values) |
+| Scalar Load | `load dest, addr` | Load 1 word from memory |
+| Vector Load | `vload dest, addr` | Load N consecutive words |
+
+Note: N is the vector length (commonly 4, 8, or 16 depending on architecture).
 
 ---
 
@@ -69,15 +71,24 @@ Cycle 3: vstore scratch[0:8] -> mem[100:108]    # Store all 8 at once
 
 ## Broadcasting
 
-To add a scalar (like `10`) to a vector, you first need to "broadcast" it - copy the single value into all 8 slots of a vector:
+**The problem:** Vector ALUs operate on vectors, not mixed scalar+vector. You can't directly add a single number to a vector.
 
-```python
-# scratch[16] contains the scalar value 10
-("valu", ("vbroadcast", 24, 16))  # scratch[24:32] = [10,10,10,10,10,10,10,10]
-("valu", ("+", 0, 0, 24))         # scratch[0:8] = scratch[0:8] + scratch[24:32]
+```text
+[5, 6, 7, 8, 9, 10, 11, 12] + 10 = ???  # Can't mix vector + scalar directly
 ```
 
-This takes 2 cycles instead of 1, but you only broadcast once and can reuse the broadcasted vector for many operations.
+**The solution:** "Broadcast" the scalar - replicate it into all slots of a vector first.
+
+```text
+Step 1: Broadcast 10 → [10, 10, 10, 10, 10, 10, 10, 10]
+
+Step 2: Now both operands are vectors, so vector addition works:
+        [5, 6, 7, 8, 9, 10, 11, 12]
+      + [10, 10, 10, 10, 10, 10, 10, 10]
+      = [15, 16, 17, 18, 19, 20, 21, 22]
+```
+
+**Why it's still fast:** You broadcast once, then reuse that broadcasted vector for many operations. If you're adding `10` to 1000 different vectors, you broadcast once and use it 1000 times.
 
 ---
 

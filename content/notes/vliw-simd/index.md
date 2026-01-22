@@ -1,6 +1,8 @@
-# VLIW SIMD Architecture - Learning Guide
+# VLIW SIMD Architecture
 
-This documentation covers the key concepts needed to understand and optimize for VLIW SIMD architectures.
+**VLIW** (Very Long Instruction Word) and **SIMD** (Single Instruction, Multiple Data) are processor architecture techniques that enable parallel execution of multiple operations.
+
+This guide covers the key concepts needed to understand and optimize for VLIW SIMD architectures.
 
 ## Documents
 
@@ -16,28 +18,18 @@ This documentation covers the key concepts needed to understand and optimize for
 
 ---
 
-## Quick Reference
+## Key Concepts
 
-### Performance Targets
-| Cycles | Description |
-|--------|-------------|
-| 147,734 | Baseline (unoptimized) |
-| 18,532 | Updated starting point |
-| 1,790 | Best human ~2hr / Claude Opus 4.5 casual |
-| 1,487 | Impressive threshold |
-| 1,363 | Best known |
+| Concept | Description |
+|---------|-------------|
+| VLIW | Explicit instruction-level parallelism scheduled by compiler/programmer |
+| SIMD | Data-level parallelism via vector operations |
+| Vector Length | Number of elements processed simultaneously (commonly 4, 8, or 16) |
+| Instruction Bundle | Group of operations executed in one cycle |
 
-### Engine Slot Limits
-| Engine | Slots/Cycle | Purpose |
-|--------|-------------|---------|
-| alu | 12 | Scalar arithmetic |
-| valu | 6 | Vector arithmetic (8 elements) |
-| load | 2 | Memory reads |
-| store | 2 | Memory writes |
-| flow | 1 | Control flow |
+## Learning Path
 
-### Key Constants
-- **VLEN = 8** - Vector length (elements per vector operation)
-- **SCRATCH_SIZE = 1536** - Available scratch space (32-bit words)
-- **Batch size = 256** - Items processed per round
-- **Rounds = 16** - Number of iterations
+Start with [Scalar vs Vector](scalar-vs-vector.md) to understand data parallelism, then proceed through the documents in order.
+
+!!! tip "Related Project"
+    These notes were developed while studying the [Anthropic Performance Take-Home](../../projects/anthropic-performance-takehome.md) challenge, which provides a hands-on way to apply these concepts.

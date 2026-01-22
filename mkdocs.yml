@@ -3,60 +3,52 @@ site_url: https://aiml.engineer
 site_description: Notes by an evolving software engineering in the revolutionized AI/ML world
 site_author: Anurag Mittal
 
-repo_url: https://github.com/anurag4dsb/aiml-engineer
-repo_name: anurag4dsb/aiml-engineer
-
 # Content directory (renamed from docs to reserve docs for repository documentation)
 docs_dir: content
 
 theme:
   name: material
+  custom_dir: content/assets/
   palette:
+    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
         icon: material/brightness-auto
         name: Switch to light mode
+      accent: teal
+
+    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: indigo
       toggle:
-        icon: material/brightness-7
+        icon: custom/moon
         name: Switch to dark mode
+      accent: teal
+
+    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
-      accent: indigo
       toggle:
-        icon: material/brightness-4
+        icon: custom/sun
         name: Switch to system preference
+      accent: teal
 
   features:
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.tracking
-    - navigation.tabs
-    - navigation.sections
-    - navigation.indexes
     - navigation.top
-    - navigation.footer
+    - toc.follow
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.code.annotate
 
-  icon:
-    repo: fontawesome/brands/github
+extra_css:
+  - assets/css/custom.css
 
 plugins:
   - search:
       lang: en
       separator: '[\s\-\.]+'
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
-      fallback_to_build_date: true
   - minify:
       minify_html: true
       minify_js: true
@@ -67,46 +59,55 @@ plugins:
       cache_safe: true
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - tables
+  - attr_list
+  - md_in_html
+  - meta
+  - toc:
+      permalink: false
+      toc_depth: 2
+      title: "On This Page"
   - pymdownx.highlight:
-      anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+      linenums: true
+      pygments_style: monokai
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - admonition
-  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - def_list
   - pymdownx.tasklist:
       custom_checkbox: true
-  - attr_list
-  - md_in_html
 
 nav:
   - Home: index.md
   - Posts: posts/index.md
   - Notes:
-      - notes/index.md
+      - Overview: notes/index.md
       - VLIW SIMD:
-          - notes/vliw-simd/index.md
+          - Overview: notes/vliw-simd/index.md
           - Scalar vs Vector: notes/vliw-simd/scalar-vs-vector.md
           - ALU and Engines: notes/vliw-simd/alu-and-engines.md
           - VLIW Architecture: notes/vliw-simd/vliw-architecture.md
           - Instruction Set: notes/vliw-simd/instruction-set.md
           - Optimization Strategies: notes/vliw-simd/optimization-strategies.md
   - Labs: labs/index.md
-  - Projects: projects/index.md
+  - Projects:
+      - Overview: projects/index.md
+      - Anthropic Performance Take-Home: projects/anthropic-performance-takehome.md
   - Reading: reading/index.md
 
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/anurag4dsb
+      link: https://github.com/anurag4dsb/aiml-engineer
   generator: false
 
 copyright: >

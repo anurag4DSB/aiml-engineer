@@ -1,6 +1,6 @@
 # Optimization Strategies
 
-Techniques to reduce cycle count from the 147,734 baseline.
+Techniques to reduce cycle count in VLIW SIMD architectures.
 
 ---
 
@@ -30,7 +30,7 @@ Cycle 1: { "alu": [("+", 0, 1, 2), ("*", 3, 4, 5), ("-", 6, 7, 8)] }
 
 ## Strategy 2: Vectorization
 
-**Problem:** Processing 1 item at a time when batch has 256 items.
+**Problem:** Processing 1 item at a time when batch has many items.
 
 **Solution:** Use vector operations to process 8 items simultaneously.
 
@@ -53,7 +53,7 @@ for i in range(8):
 
 ## Strategy 3: Use Loops Instead of Unrolling
 
-**Problem:** Baseline unrolls all 16 rounds x 256 items = 4,096 iterations as separate instructions.
+**Problem:** Unrolling all iterations as separate instructions bloats code size.
 
 **Solution:** Use `cond_jump` to loop, reducing code size.
 
@@ -107,7 +107,7 @@ body.append(("flow", ("cond_jump", counter, loop_start))) # Loop back
 ("alu", ("*", y, y, two_const))
 ```
 
-**Note:** `KernelBuilder.scratch_const()` already does this caching.
+**Note:** Many VLIW toolchains provide helpers for constant caching.
 
 ---
 
@@ -134,11 +134,11 @@ for i in range(8):
 
 ---
 
-## Strategy 6: Pipeline the Hash
+## Strategy 6: Pipeline Multi-Stage Computations
 
-**Problem:** Hash has 6 stages, each depending on the previous.
+**Problem:** Multi-stage computations where each stage depends on the previous create serial bottlenecks.
 
-**Solution:** While computing hash stage 3 for element A, compute stage 2 for element B, stage 1 for element C.
+**Solution:** While computing stage 3 for element A, compute stage 2 for element B, stage 1 for element C.
 
 ### Visualization
 
@@ -178,14 +178,20 @@ Cycle 1: { "alu": [compute1], "load": [load1], "store": [store1] }
 
 ## Optimization Priority
 
-For this challenge, the most impactful optimizations are likely:
+For most VLIW SIMD workloads, the most impactful optimizations are:
 
-1. **Vectorization** (8x potential) - Process 8 batch items at once
-2. **Instruction packing** (up to 23x potential) - Fill all engine slots
+1. **Vectorization** - Process multiple items at once (Nx speedup where N is vector length)
+2. **Instruction packing** - Fill all engine slots
 3. **Loops** - Reduce code size, enable other optimizations
-4. **Memory batching** - Use vload/vstore
+4. **Memory batching** - Use vector loads/stores
 
-The combination of vectorization + packing can theoretically achieve 100x+ speedup over the baseline.
+The combination of vectorization + packing can achieve significant speedups over naive implementations.
+
+---
+
+## Applying These Strategies
+
+For a concrete example applying all these optimization strategies, see the [Anthropic Performance Take-Home](../../projects/anthropic-performance-takehome.md) project, which demonstrates achieving 100x+ speedup on a VLIW SIMD architecture.
 
 ---
 
