@@ -9,6 +9,8 @@ docs_dir: content
 theme:
   name: material
   custom_dir: content/assets/
+  logo: assets/images/logo.svg
+  favicon: assets/images/logo.svg
   font:
     text: Lato
     code: Fira Code
