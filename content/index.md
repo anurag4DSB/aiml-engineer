@@ -1,3 +1,11 @@
+---
+title: Home
+---
+
+<style>
+.md-typeset h1 { display: none; }
+</style>
+
 A knowledge base for AI/ML engineering - notes, labs, projects, and blog posts.
 
 ## Sections

@@ -1,4 +1,10 @@
-# VLIW SIMD Architecture
+---
+title: "VLIW SIMD Architecture"
+---
+
+<style>
+.md-typeset h1 { display: none; }
+</style>
 
 **VLIW** (Very Long Instruction Word) and **SIMD** (Single Instruction, Multiple Data) are processor architecture techniques that enable parallel execution of multiple operations.
 

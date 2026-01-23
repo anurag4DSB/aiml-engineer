@@ -32,6 +32,9 @@ dev = [
 # See: https://github.com/jackdewinter/pymarkdown
 
 [tool.pymarkdown.plugins]
+# MD003: Heading style - Disabled as inline CSS creates pseudo-heading style conflicts
+MD003 = { enabled = false }
+
 # MD013: Line length - Disabled to allow flexible documentation formatting
 # Technical documentation often benefits from longer lines for code examples and URLs
 MD013 = { enabled = false }
