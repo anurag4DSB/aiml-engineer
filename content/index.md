@@ -1,5 +1,3 @@
-# aiml.engineer
-
 A knowledge base for AI/ML engineering - notes, labs, projects, and blog posts.
 
 ## Sections
