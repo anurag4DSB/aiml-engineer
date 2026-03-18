@@ -1,0 +1,55 @@
+baseURL: https://aiml.engineer/
+languageCode: en-us
+title: aiml.engineer
+theme: PaperMod
+
+paginate: 10
+
+params:
+  env: production
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowToc: true
+  ShowCodeCopyButtons: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+
+  homeInfoParams:
+    Title: "AI Systems & World Models"
+    Content: >
+      Exploring how machines learn representations and predict the world
+      from high-dimensional data (images → video → scaling).
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/anurag4dsb"
+
+menu:
+  main:
+    - identifier: projects
+      name: Projects
+      url: /projects/
+      weight: 10
+    - identifier: experiments
+      name: Experiments
+      url: /experiments/
+      weight: 20
+    - identifier: notes
+      name: Notes
+      url: /notes/
+      weight: 30
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 40
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 50
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
