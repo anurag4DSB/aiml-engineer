@@ -14,6 +14,10 @@ params:
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
+  mainSections:
+    - projects
+    - experiments
+    - notes
 
   homeInfoParams:
     Title: "Building AI Systems"

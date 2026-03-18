@@ -6,6 +6,10 @@ tags: [self-supervised-learning, contrastive-learning, augmentations]
 summary: "Testing how different augmentation strategies affect representation quality in SimCLR-style contrastive learning."
 ---
 
+## Status
+
+Planned experiment -- not yet executed.
+
 ## Hypothesis
 
 Augmentations are the most critical design choice in contrastive learning. They define what invariances the model learns -- get them wrong and the representations are useless, regardless of architecture or training budget.
