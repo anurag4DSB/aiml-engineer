@@ -16,20 +16,17 @@ params:
   ShowBreadCrumbs: true
 
   homeInfoParams:
-    Title: "AI Systems & World Models"
+    Title: "Building AI Systems"
     Content: >
-      Exploring how machines learn representations and predict the world
-      from high-dimensional data (images → video → scaling).
+      Projects, experiments, and technical notes across machine learning
+      and AI systems. Current focus: self-supervised learning (SimCLR)
+      and world-model foundations.
 
   socialIcons:
     - name: github
       url: "https://github.com/anurag4dsb"
     - name: youtube
       url: "https://www.youtube.com/@AnuragBuildsThings"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/mittalanu/"
-    - name: email
-      url: "mailto:info@anuragmittal.com"
 
 menu:
   main:
