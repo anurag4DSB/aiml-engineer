@@ -24,6 +24,12 @@ params:
   socialIcons:
     - name: github
       url: "https://github.com/anurag4dsb"
+    - name: youtube
+      url: "https://www.youtube.com/@AnuragBuildsThings"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/mittalanu/"
+    - name: email
+      url: "mailto:info@anuragmittal.com"
 
 menu:
   main:

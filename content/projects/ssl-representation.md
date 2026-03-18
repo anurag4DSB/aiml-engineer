@@ -1,5 +1,5 @@
 ---
-title: "Self-Supervised Representation Learning with SimCLR"
+title: "Learning Representations Without Labels (SimCLR)"
 date: 2026-03-18
 draft: false
 tags: [self-supervised-learning, contrastive-learning, computer-vision]
