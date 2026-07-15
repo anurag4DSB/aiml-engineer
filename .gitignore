@@ -8,7 +8,12 @@
 .idea/
 .vscode/
 
-# Hugo
-public/
-resources/
-.hugo_build.lock
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Environment
+.env
